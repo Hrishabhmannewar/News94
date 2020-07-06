@@ -1,0 +1,327 @@
+{% extends 'news/index.html'%}
+{% block title%} News 94 {% endblock %}
+{% block css %}
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.onoffswitch3
+{
+    position: relative;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+
+.onoffswitch3-checkbox {
+    display: none;
+
+}
+
+.onoffswitch3-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 0px solid #999999; border-radius: 0px;
+}
+
+.onoffswitch3-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch3-inner > span {
+    display: block; float: left; position: relative; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: 'Montserrat', sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.onoffswitch3-inner .onoffswitch3-active {
+    padding-left: 10px;
+    background-color: #EEEEEE; color: #FFFFFF;
+}
+
+.onoffswitch3-inner .onoffswitch3-inactive {
+    width: 100px;
+    padding-left: 16px;
+    background-color: #EEEEEE; color: #FFFFFF;
+    text-align: right;
+}
+
+.onoffswitch3-switch {
+    display: block; width: 50%; margin: 0px; text-align: center;
+    border: 0px solid #999999;border-radius: 0px;
+    position: absolute; top: 0; bottom: 0;
+}
+.onoffswitch3-active .onoffswitch3-switch {
+    background: #27A1CA; left: 0;
+    width: 110px;
+    font-size:14px;
+}
+.onoffswitch3-inactive{
+    background: #A1A1A1; right: 0;
+    width: 20px;
+}
+.onoffswitch3-checkbox:checked + .onoffswitch3-label .onoffswitch3-inner {
+    margin-left: 0;
+}
+
+.glyphicon-remove{
+    padding: 1px 1px px 1px;
+    color: #fff;
+    background-color: #000;
+    height: 20px;
+    width: 20px;
+    border-radius: 15px;
+    border: 2px solid #fff;
+top:2px;
+}
+
+.scroll-text{
+    color: #000;
+}
+
+
+
+
+
+
+
+.kt-social-buttons-widget ul {
+list-style: none;
+padding-left: 0;
+}
+.kt-social-buttons-widget li a {
+font-size: 10px;
+text-transform: uppercase;
+letter-spacing: 2px;
+text-decoration: none;
+display: block;
+color: #0a0a0a;
+padding: 10px 1px 10px 10px;
+background:#f8f8f8;
+}
+.kt-social-buttons-widget ul li {
+width: 100%;
+margin-bottom: 10px;
+}
+.kt-social-buttons-widget li:hover a.social-btn-twitter {
+background: #1da1f2;
+color:#fff;
+}
+.kt-social-buttons-widget li a i {
+float: right;
+width: 35px;
+height: 14px;
+line-height: 14px;
+text-align: ;
+margin: 0;
+padding: 0 0 0 10px;
+font-size: 14px;
+}
+.kt-social-buttons-widget li a i {
+border-left: 1px solid #666;
+line-height: 14px;
+}
+.kt-social-buttons-widget li:hover a.social-btn-facebook {
+background: #3b5998;
+color:#fff;
+}
+.kt-social-buttons-widget li:hover a.social-btn-youtube {
+background: #cd201f;
+color:#fff;
+}
+.kt-social-buttons-widget li:hover a.social-btn-instagram {
+background: #405de6;
+color:#fff;
+}
+
+
+.videoWrapper {
+position: relative;
+padding-bottom: 56.25%; /* 16:9 */
+padding-top: 25px;
+height: 0;
+}
+.videoWrapper iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+
+
+
+@keyframes onoffswitch3 {
+  0% {
+    margin-left: 100%;
+    transform: translateX(0%);
+  }
+  100% {
+    margin-left: 0;
+    transform: translateX(-100%);
+  }
+}
+
+
+
+{% endblock%}
+
+{% block body %}
+<!-- news-->
+
+	<div class="alert alert-danger alert-dismissible" role="alert">
+<div class="onoffswitch3">
+    <input type="checkbox" name="onoffswitch3" class="onoffswitch3-checkbox" id="myonoffswitch3" checked>
+    <label class="onoffswitch3-label" for="myonoffswitch3">
+        <span class="onoffswitch3-inner">
+            <span class="onoffswitch3-active">
+
+                <marquee class="scroll-text">
+
+
+                    {% for j in contex %}
+                    <span class="glyphicon glyphicon-forward">  </span>
+                    {{j.news_head}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    {%endfor%}
+
+
+                </marquee>
+
+
+
+                <span class="onoffswitch3-switch" >BREAKING <span class="glyphicon glyphicon-remove"></span></span>
+            </span>
+            <span class="onoffswitch3-inactive" ><span class="onoffswitch3-switch" style="color:black;">SHOW BREAKING NEWS</span></span>
+        </span>
+    </label>
+</div>
+
+    </div>
+ <br><br>
+
+
+
+
+
+
+
+
+<div class="d-flex flex-row">
+
+<div class="container" >
+    <div class="row">
+        <div class="col-sm-8" style="display:block; position:relative;">
+       {%for a in users %}
+<div class="card mb-3" style="max-width: 800px; float:center;" >
+    <div class="row no-gutters" style="width: 104.50%; padding:0px 0px 0px 14px; ">
+        <div class="col-md-4" style="background-color: #868e93; ">
+        <img src="{{a.image.url}}" class="card-img h-100" alt="..." style=" width:100%; float:inherit;">
+        </div>
+            <div class="col-sm-7" style="">
+            <div class="card-body">
+                <h5 class="card-title"><b>{{a.news_head}}</b></h5>
+                <br>
+             <p class="card-text" style="color:#696969;">{{a.desc|slice:"0:200"}}...</p>
+                <a href="/descriptive/{{a.id}} " id="qv{{i.id}}" class="btn btn-primary stretched-link">Read more...</a>
+   </div>
+        </div>
+    </div>
+</div> <br><br>
+       {%endfor%}
+
+
+
+<center>
+{% if users.has_other_pages %}
+  <ul class="pagination">
+    {% if users.has_previous %}
+      <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in users.paginator.page_range %}
+      {% if users.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if users.has_next %}
+      <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</center>
+ </div>
+
+        <div id="sidebar-wrapper" style="padding: 0px 0px 0px 40px;">
+
+<div class="sidebar ty-trigger section" id="sidebar1"><div class="widget HTML" data-version="1" id="HTML2">
+
+<h2 class="title"><span>Follow Us</span></h2>
+<div class="widget-content">
+<div class="kt-social-buttons-widget"><ul class="sidebar-social clearfix"><li><a href="#!" class="social-btn-twitter">Follow on Twitter <i class="fa fa-twitter"></i> </a></li><li><a href="#!" class="social-btn-facebook">Like on Facebook <i class="fa fa-facebook"></i> </a></li><li><a href="#!" class="social-btn-youtube">Subscribe on Youtube <i class="fa fa-youtube"></i> </a></li><li><a href="#!" class="social-btn-instagram">Follow on Instagram <i class="fa fa-instagram"></i> </a></li></ul></div>
+
+</div>
+<div class="clear"></div>
+</div>
+<div class="widget HTML" data-version="1" id="HTML4">
+<h2 class="title"><span>Facebook</span></h2>
+<div class="widget-content">
+<center>
+<div class="fb-page" data-href="https://www.facebook.com/Foxogyan/" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Foxogyan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Foxogyan/">FoxoGyan</a></blockquote></div></div>
+<div class="clear"></div>
+</div>
+
+
+<div class="clear"></div>
+
+
+
+
+
+
+<div style="clear: both;"></div>
+<div class="sidebar ty-trigger section" id="sidebar2"  >
+    <div class="widget HTML" data-version="1" id="HTML5">
+<h2 class="title"><span>Subscribe Us</span></h2>
+<div class="widget-content">
+<div class="videoWrapper">
+    <!-- Copy & Pasted from YouTube-->
+<iframe width="1252" height="704" src="https://www.youtube.com/embed/88TicgRq7u4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+</div>
+<div class="clear"></div>
+</div>
+<br><br>
+
+</div>
+
+<div class="sidebar ty-trigger section" id="sidebar3">
+
+<form method="get" action="/Archive">
+    <div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false" style="width:250px">
+    Blog Archive
+  </button>
+  <div class="dropdown-menu" style="width:250px">
+      {%for a in users %}
+            <button class="dropdown-item"  type="submit" value="{{a.only_date}}" name="archive" id="archive"><center>{{a.only_date}}</center></button>
+            <div class="dropdown-divider"></div>
+      {%endfor%}
+  </div>
+  </div>
+</form>
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}
+

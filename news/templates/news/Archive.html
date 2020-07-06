@@ -1,0 +1,29 @@
+{% extends 'news/index.html'%}
+{% block title%} News 94 {% endblock %}
+{% block body %}
+<br><br><br><br>
+<center>
+<div class="container" >
+    <div class="row">
+        <div class="col-sm-8" >
+       {%for a in contex %}
+<div class="card" style="max-width: 800px;">
+    <div class="row no-gutters">
+        <div class="col-md-4" style="background: #868e96;">
+        <img src="{{a.image.url}}" class="card-img-top h-100" alt="...">
+        </div>
+            <div class="col-sm-7">
+            <div class="card-body">
+                <h5 class="card-title"><b>{{a.news_head}}</b></h5>
+             <p class="card-text" style="color:#696969;">{{a.desc|slice:"0:200"}}...</p>
+                <a href="#" class="btn btn-primary stretched-link">Read more...</a>
+   </div>
+        </div>
+    </div>
+</div>
+
+    <br><br>
+       {%endfor%}
+            </div></div></div>
+    </center>
+            {% endblock %}

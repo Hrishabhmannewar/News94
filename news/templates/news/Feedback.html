@@ -1,0 +1,67 @@
+{% extends 'news/index.html'%}
+
+{% block title%}Feedback{% endblock %}
+{% block css%}
+body{
+background-color: #F0F8FF;
+}
+
+{% endblock%}
+{% block body %}
+<br>
+
+
+
+
+
+
+<div class="container" >
+  <div class="jumbotron">
+
+
+    <div class=" panel-primary class">
+		<div class="panel-heading"><center><h2><b>Feedback</b></h2></center></div>
+    <div style="padding:10px 90px 40px 90px">
+
+        <form action="" method="post">{% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name='name' placeholder="Enter Your Name" required>
+  </div>
+  <div class="form-group">
+    <label for="name">Email</label>
+    <input type="email" class="form-control" id="email" name='email' placeholder="Enter Your Email" required>
+  </div>
+
+    <div class="form-group">
+    <label for="subject">Subject</label>
+    <input type="tel" class="form-control" id="subject" name='subject' placeholder="Enter Subject" required>
+  </div>
+
+
+   <div class="form-group">
+    <label for="desc">Message</label>
+    <textarea class="form-control" id="message" name='message' rows="3" placeholder="Your Feedback Is Important To Us" required></textarea>
+  </div>
+            <center>
+        <button type="submit" class="btn btn-danger" style="width:200px">Submit</button>
+</center>
+</form>
+    </div>
+    </div >
+
+
+	<center style="font-size:10px;  word-spacing: 22px;"<p><b style="color:rgb(49,177,203);">T E A M   N E W S   9 4</b></p></center>
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+{% block js %}
+
+
+{% endblock %}

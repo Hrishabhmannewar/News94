@@ -1,0 +1,68 @@
+{% extends 'news/index.html'%}
+{% load static%}
+
+{% block title%}News 94 -{{read_max.news_head}} {% endblock %}
+
+
+       {% block css %}
+body{
+background-image: url('{% static "news/back.png" %}');
+background-repeat:no-repeat;
+background-size:100%;
+}
+        {% endblock %}
+{% block body %}
+<br><br><br><br>
+
+<div class="container" >
+  <div class="jumbotron">
+
+
+    <div class="panel panel-warning">
+		<div class="panel-heading"><center><h2><b>{{read_max.news_head}}</b></h2></center></div>
+  <table class="table table-hover">
+  <table class="table table-hover">
+
+   <div class="card mb-2" style="padding:50px 50px 50px 50px;">
+  <img src="{{read_max.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title"><b>{{read_max.news_head}}<b></b></h4>
+        <p class="card-text" style="font-size: 1.5rem;"><small class="text-muted">By:<a href="/">News 94</a> | {{read_max.date}}</small></p>
+
+    <p class="card-text" style="font-size: 1.80rem;">{{read_max.desc}}</p>
+    <p class="card-text"><small class="text-muted">Last updated {{read_max.date}}</small></p>
+  </div>
+</div>
+    </table>
+
+      <div class="panel-body">
+
+<center><h3><b>Sponsered By<b></b></h3>
+  
+          <img src="{% static 'news/spon.jpg' %}" class="card-img-top" alt="..." style="width:900px; height:300px ">
+</center>
+
+
+</div>
+    </div >
+
+
+	<center style="font-size:10px;  word-spacing: 22px;"<p><b style="color:rgb(49,177,203);">T E A M   N E W S   9 4</b></p></center>
+
+  </div>
+</div>
+
+<div class="container" >
+  <div class="jumbotron">
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
